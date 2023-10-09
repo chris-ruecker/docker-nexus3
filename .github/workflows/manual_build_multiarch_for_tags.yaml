@@ -18,7 +18,7 @@ jobs:
 
     strategy:
       matrix:
-        tag: ${{ github.event.inputs.tags }}
+        tag: ${{fromJson(github.event.inputs.tags)}}
 
     steps: 
       - name: Checkout code for tag ${{ matrix.tag }}
